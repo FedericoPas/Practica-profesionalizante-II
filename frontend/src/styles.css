@@ -1,0 +1,928 @@
+:root {
+  color: #182022;
+  background: #f6f4ef;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+.primaryAction {
+  border: 0;
+  border-radius: 6px;
+  background: #d94f30;
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+  max-width: 100%;
+  padding: 0.9rem 1rem;
+}
+
+button:hover,
+.primaryAction:hover {
+  background: #b93d23;
+}
+
+.hero {
+  min-height: 92vh;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(10, 14, 15, 0.86), rgba(10, 14, 15, 0.3)),
+    url("https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
+}
+
+.topbar {
+  align-items: center;
+  backdrop-filter: blur(14px);
+  background: rgba(16, 23, 25, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  left: max(1.2rem, calc((100vw - 1180px) / 2));
+  max-width: 1180px;
+  padding: 0.75rem 0.9rem;
+  position: fixed;
+  right: max(1.2rem, calc((100vw - 1180px) / 2));
+  top: 0.75rem;
+  width: auto;
+  z-index: 20;
+}
+
+.authHeader {
+  background: #172325;
+  color: white;
+  min-height: 5.5rem;
+}
+
+.hero {
+  padding-top: 5.2rem;
+}
+
+.topbar strong,
+.brandLink {
+  flex: 0 0 auto;
+  font-size: 0.95rem;
+  font-weight: 900;
+  max-width: 11rem;
+}
+
+.topbar div {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.topbar a,
+.linkButton,
+.userBadge {
+  white-space: nowrap;
+}
+
+.topbar a {
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.88rem;
+  padding: 0.45rem 0.55rem;
+}
+
+.topbar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/*
+.topbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 1.2rem;
+}
+
+.topbar strong,
+.brandLink {
+  font-size: 1rem;
+  font-weight: 800;
+  max-width: 12rem;
+}
+
+.topbar div {
+  display: flex;
+  gap: 1rem;
+}
+
+.topbar a {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+}
+*/
+
+.linkButton {
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  padding: 0.5rem 0.7rem;
+}
+
+.linkButton:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.userBadge {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: white;
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 800;
+  max-width: 11rem;
+  overflow: hidden;
+  padding: 0.45rem 0.75rem;
+  text-overflow: ellipsis;
+}
+
+.heroContent {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1180px;
+  min-height: calc(92vh - 76px);
+  padding: 2rem 1.2rem 5rem;
+}
+
+.heroContent div {
+  max-width: 680px;
+}
+
+.eyebrow {
+  color: #d94f30;
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #ffb13d;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 7vw, 5.6rem);
+  line-height: 0.98;
+  margin-bottom: 1rem;
+  max-width: 820px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.18;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  color: #586466;
+  line-height: 1.7;
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.15rem;
+  max-width: 620px;
+}
+
+.primaryAction {
+  display: inline-flex;
+  margin-top: 1rem;
+}
+
+.sessionMessage {
+  color: #ffdf9b;
+  font-weight: 800;
+  margin-top: 1rem;
+}
+
+.authPage {
+  align-items: center;
+  display: grid;
+  min-height: calc(100vh - 76px);
+  padding: 3rem 1.2rem;
+}
+
+.authForm {
+  background: white;
+  border: 1px solid #e3ddd2;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.9rem;
+  margin: 0 auto;
+  max-width: 460px;
+  padding: 1.4rem;
+  width: 100%;
+}
+
+.authForm h1 {
+  color: #172325;
+  font-size: 2.3rem;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.authForm a {
+  color: #d94f30;
+  font-weight: 800;
+}
+
+.contentPage {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 3rem 1.2rem 5rem;
+}
+
+.contentPage h1 {
+  color: #172325;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1;
+}
+
+.learningGrid,
+.moduleEditorGrid {
+  align-items: stretch;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  margin-top: 1.5rem;
+}
+
+.learningCard,
+.moduleEditor,
+.adminBlock {
+  background: white;
+  border: 1px solid #e3ddd2;
+  border-radius: 8px;
+  padding: 1.1rem;
+}
+
+.learningCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  min-height: 410px;
+  min-width: 0;
+}
+
+.learningCard a {
+  color: #d94f30;
+  font-weight: 800;
+}
+
+.learningCard h2 {
+  min-height: 3.4rem;
+}
+
+.learningCard > p {
+  display: -webkit-box;
+  min-height: 4.8rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.learningCard > button {
+  align-self: end;
+  margin-top: auto;
+  width: 100%;
+}
+
+.moduleContent {
+  background: #f6f4ef;
+  border-radius: 6px;
+  color: #334036;
+  flex: 1 1 auto;
+  line-height: 1.6;
+  max-height: 11rem;
+  min-height: 9rem;
+  overflow: auto;
+  padding: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.lockedCard .lockedNotice {
+  align-self: end;
+  margin-top: auto;
+}
+
+.adminBlock {
+  margin-top: 1.5rem;
+}
+
+.moduleEditor,
+.moduleEditorForm,
+.uploadForm {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.usersRow {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.2fr 1.5fr 0.7fr 0.7fr 0.8fr;
+  min-width: 900px;
+  padding: 0.9rem 1rem;
+}
+
+.usersRow + .usersRow {
+  border-top: 1px solid #eee8dd;
+}
+
+.messageList {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.messageCard {
+  background: white;
+  border: 1px solid #e3ddd2;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.messageCard h2,
+.messageCard h3 {
+  margin-bottom: 0;
+}
+
+.answerBox {
+  background: #eef7ef;
+  border-left: 4px solid #1f6f3d;
+  border-radius: 6px;
+  padding: 0.9rem;
+}
+
+.answerBox p {
+  margin-bottom: 0;
+}
+
+.answerForm {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.moduleDetail {
+  display: grid;
+  gap: 1rem;
+}
+
+.contentList {
+  display: grid;
+  gap: 1rem;
+}
+
+.contentItem {
+  background: #fdfdfb;
+  border: 1px solid #e3ddd2;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.contentItem video,
+.contentItem iframe {
+  aspect-ratio: 16 / 9;
+  background: #172325;
+  border: 0;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.contentItem a {
+  color: #d94f30;
+  font-weight: 800;
+}
+
+.paymentPanel {
+  background: white;
+  border: 1px solid #e3ddd2;
+  border-radius: 8px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+}
+
+.paymentForm {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.paymentGrid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.lockedCard {
+  opacity: 0.92;
+}
+
+.lockedNotice {
+  background: #fff4dd;
+  border-left: 4px solid #ffb13d;
+  border-radius: 6px;
+  color: #6b4a0c;
+  font-weight: 800;
+  padding: 0.8rem;
+}
+
+.uploadedList {
+  background: #f6f4ef;
+  border-radius: 6px;
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.8rem;
+}
+
+.uploadedList h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.uploadedItem {
+  align-items: center;
+  background: white;
+  border: 1px solid #e3ddd2;
+  border-radius: 6px;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  padding: 0.6rem;
+}
+
+.uploadedItem button {
+  padding: 0.55rem 0.7rem;
+}
+
+.sectionIntro,
+.adminPreview,
+.contactBand,
+.detailBand {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 5rem 1.2rem 2rem;
+}
+
+.sectionIntro p {
+  align-self: end;
+  font-size: 1.05rem;
+}
+
+.courseGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 1rem 1.2rem 4rem;
+}
+
+.courseCard {
+  background: white;
+  border: 1px solid #e3ddd2;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.courseCard img {
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.courseBody {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-rows: auto auto 1fr auto;
+  height: 100%;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.courseMeta,
+.courseFooter {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.courseMeta span,
+.featureList span {
+  background: #eef1e8;
+  border-radius: 999px;
+  color: #334036;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.45rem 0.65rem;
+}
+
+.courseFooter {
+  border-top: 1px solid #eee8dd;
+  margin: auto 0 1rem;
+  padding-top: 1rem;
+}
+
+.courseFooter strong {
+  color: #0f5c55;
+  font-size: 1.1rem;
+}
+
+.detailBand {
+  align-items: stretch;
+  background: #172325;
+  color: white;
+  margin: 0;
+  max-width: none;
+  padding-left: max(1.2rem, calc((100vw - 1180px) / 2));
+  padding-right: max(1.2rem, calc((100vw - 1180px) / 2));
+}
+
+.modulePanel ul {
+  display: grid;
+  gap: 0.85rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.modulePanel li {
+  display: grid;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #ffb13d;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.modulePanel p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.modulePanel li strong {
+  color: #ffdf9b;
+}
+
+.modulePanel li span {
+  color: white;
+}
+
+.formPanel,
+.contactForm {
+  background: white;
+  border-radius: 8px;
+  color: #182022;
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+  padding: 1.2rem;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #d8d2c7;
+  border-radius: 6px;
+  color: #182022;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.status {
+  background: #eef7ef;
+  border-radius: 6px;
+  color: #1f6f3d;
+  margin: 0;
+  padding: 0.8rem;
+}
+
+.adminPreview {
+  align-items: center;
+}
+
+.featureList {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.featureList span {
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 1.3rem;
+}
+
+.contactBand {
+  padding-bottom: 5rem;
+}
+
+.forumPanel {
+  grid-column: 1 / -1;
+}
+
+.studentsPanel {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 2rem 1.2rem 4rem;
+}
+
+.studentsHeader {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.emptyState {
+  background: white;
+  border: 1px solid #e3ddd2;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.studentsTable {
+  background: white;
+  border: 1px solid #e3ddd2;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.studentsRow {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.1fr 1.3fr 0.9fr 1.4fr 0.7fr;
+  min-width: 860px;
+  padding: 0.9rem 1rem;
+}
+
+.studentsRow + .studentsRow {
+  border-top: 1px solid #eee8dd;
+}
+
+.studentsHead {
+  background: #172325;
+  color: white;
+  font-weight: 800;
+}
+
+.siteFooter {
+  background: #101719;
+  color: white;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.5fr 1fr;
+  margin-top: 0;
+  padding: 2rem max(1.2rem, calc((100vw - 1180px) / 2));
+}
+
+.siteFooter p {
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0.6rem 0 0;
+  max-width: 620px;
+}
+
+.siteFooter div:last-child {
+  align-content: start;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.siteFooter span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 1040px) {
+  html {
+    scroll-padding-top: 9.5rem;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    max-height: 42vh;
+    overflow-y: auto;
+  }
+
+  .topbar div {
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding-top: 8.25rem;
+  }
+
+  .authHeader {
+    min-height: 8.5rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar div {
+    justify-content: flex-start;
+  }
+
+  .sectionIntro,
+  .adminPreview,
+  .contactBand,
+  .detailBand,
+  .courseGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 86vh;
+  }
+
+  .heroContent {
+    min-height: calc(86vh - 92px);
+  }
+
+  .studentsHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .learningGrid,
+  .moduleEditorGrid,
+  .paymentPanel,
+  .siteFooter {
+    grid-template-columns: 1fr;
+  }
+
+  .uploadedItem {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  html {
+    scroll-padding-top: 11rem;
+  }
+
+  .topbar {
+    left: 0.7rem;
+    max-height: 55vh;
+    padding: 0.65rem;
+    right: 0.7rem;
+    top: 0.55rem;
+  }
+
+  .topbar div {
+    gap: 0.35rem;
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+
+  .topbar a,
+  .linkButton,
+  .userBadge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .brandLink {
+    max-width: none;
+    width: 100%;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 11rem;
+  }
+
+  .authHeader {
+    min-height: 10.5rem;
+  }
+
+  .heroContent {
+    min-height: auto;
+    padding: 2rem 1rem 3rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 1.04;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+  }
+
+  .sectionIntro,
+  .adminPreview,
+  .contactBand,
+  .detailBand {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .courseGrid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .authForm,
+  .learningCard,
+  .moduleEditor,
+  .adminBlock,
+  .messageCard,
+  .contentItem {
+    padding: 0.9rem;
+  }
+
+  .studentsRow,
+  .usersRow {
+    gap: 0.6rem;
+  }
+
+  .featureList {
+    grid-template-columns: 1fr;
+  }
+
+  .paymentGrid {
+    grid-template-columns: 1fr;
+  }
+}
