@@ -5,7 +5,11 @@
   "rewrites": [
     {
       "source": "/backend/(.*)",
-      "destination": "/api/$1"
+      "destination": "/api?path=$1"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api?path=$1"
     },
     {
       "source": "/((?!api/.*).*)",
