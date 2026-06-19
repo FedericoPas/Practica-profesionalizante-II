@@ -170,7 +170,7 @@ button:hover,
   display: inline-flex;
   font-size: 0.9rem;
   font-weight: 800;
-  max-width: 11rem;
+  max-width: 15rem;
   overflow: hidden;
   padding: 0.45rem 0.75rem;
   text-overflow: ellipsis;

@@ -581,6 +581,8 @@ function App() {
   }
 
   function renderNav() {
+    const currentUserRoleLabel = isAdmin(currentUser) ? "Administrador" : "Alumno";
+
     return (
       <nav className="topbar" aria-label="Navegacion principal">
         <a className="brandLink" href="#inicio">
@@ -596,7 +598,9 @@ function App() {
               <a href="#modulos">Mis modulos</a>
               <a href="#mis-consultas">Mis consultas</a>
               {isAdmin(currentUser) && <a href="#admin">Admin</a>}
-              <span className="userBadge">{currentUser.name}</span>
+              <span className="userBadge">
+                {currentUserRoleLabel}: {currentUser.name}
+              </span>
               <button className="linkButton" type="button" onClick={logout}>
                 Salir
               </button>
@@ -1060,7 +1064,7 @@ function App() {
         <header className="authHeader">{renderNav()}</header>
         <section className="authPage">
           <form className="authForm" onSubmit={handleLogin}>
-            <span className="eyebrow">Acceso de alumno</span>
+            <span className="eyebrow">Acceso a la plataforma</span>
             <h1>Iniciar sesion</h1>
             <input name="email" type="email" placeholder="Email" required />
             <input name="password" type="password" placeholder="Contrasena" required />
