@@ -615,17 +615,40 @@ function App() {
   function renderFooter() {
     return (
       <footer className="siteFooter">
-        <div>
+        <div className="footerBrand">
           <strong>Aprende Mecanica Automotriz</strong>
           <p>
             Plataforma de capacitacion tecnica para organizar cursos, videoclases,
             materiales y comunicacion entre instructor y alumnos.
           </p>
+          <p className="footerNote">
+            Escuela online ficticia para formacion practica en mecanica, diagnostico
+            y mantenimiento automotriz.
+          </p>
         </div>
-        <div>
-          <span>Formacion online</span>
-          <span>Mecanica automotriz</span>
-          <span>Practicas y diagnostico</span>
+
+        <div className="footerBlock">
+          <h3>Contacto</h3>
+          <span>Telefono: +54 9 11 2456-7890</span>
+          <span>Email: consultas@aprendemecanica.com</span>
+          <span>Direccion: Av. Taller 1450, Buenos Aires</span>
+          <span>Horario: Lun. a Vie. de 9:00 a 18:00</span>
+        </div>
+
+        <div className="footerBlock">
+          <h3>Redes</h3>
+          <a href="#inicio">Instagram: @aprende.mecanica</a>
+          <a href="#inicio">Facebook: Aprende Mecanica Online</a>
+          <a href="#inicio">YouTube: Taller Virtual AM</a>
+          <a href="#inicio">WhatsApp: Consultas y turnos</a>
+        </div>
+
+        <div className="footerBlock">
+          <h3>Accesos</h3>
+          <a href="#cursos">Cursos disponibles</a>
+          <a href="#vista-previa">Vista previa de modulos</a>
+          <a href="#inscripcion">Inscripcion</a>
+          <a href="#contacto">Foro de consultas</a>
         </div>
       </footer>
     );

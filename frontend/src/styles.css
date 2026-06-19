@@ -747,8 +747,8 @@ textarea {
   background: #101719;
   color: white;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  grid-template-columns: 1.6fr repeat(3, minmax(0, 1fr));
   margin-top: 0;
   padding: 2rem max(1.2rem, calc((100vw - 1180px) / 2));
 }
@@ -759,14 +759,39 @@ textarea {
   max-width: 620px;
 }
 
-.siteFooter div:last-child {
+.siteFooter h3 {
+  color: #ffdf9b;
+  font-size: 0.95rem;
+  margin-bottom: 0.7rem;
+}
+
+.footerBrand,
+.footerBlock {
   align-content: start;
   display: grid;
   gap: 0.55rem;
+  min-width: 0;
 }
 
-.siteFooter span {
+.footerBrand strong {
+  font-size: 1.05rem;
+}
+
+.footerNote {
+  border-left: 3px solid #d94f30;
+  padding-left: 0.8rem;
+}
+
+.siteFooter span,
+.siteFooter a {
   color: rgba(255, 255, 255, 0.78);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.siteFooter a:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 @media (max-width: 1040px) {
