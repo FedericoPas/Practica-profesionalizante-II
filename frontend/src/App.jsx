@@ -581,7 +581,7 @@ function App() {
   }
 
   function renderNav() {
-    const currentUserRoleLabel = isAdmin(currentUser) ? "Administrador" : "Alumno";
+    const currentUserBadge = isAdmin(currentUser) ? "Administrador" : currentUser?.name;
 
     return (
       <nav className="topbar" aria-label="Navegacion principal">
@@ -598,9 +598,7 @@ function App() {
               <a href="#modulos">Mis modulos</a>
               <a href="#mis-consultas">Mis consultas</a>
               {isAdmin(currentUser) && <a href="#admin">Admin</a>}
-              <span className="userBadge">
-                {currentUserRoleLabel}: {currentUser.name}
-              </span>
+              <span className="userBadge">{currentUserBadge}</span>
               <button className="linkButton" type="button" onClick={logout}>
                 Salir
               </button>
